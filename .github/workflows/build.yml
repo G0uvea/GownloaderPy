@@ -27,7 +27,7 @@ jobs:
 
       - name: Compilar com PyInstaller
         run: |
-          pyinstaller --noconfirm --onedir --windowed --name "GownloaderPy" --icon "icone.ico" --add-data "src/screen/style.qss;src/screen" --add-data "icone.ico;." src/main.py
+          pyinstaller --noconfirm --onedir --windowed --name "GownloaderPy" --icon "icon.ico" --add-data "src/screen/style.qss;src/screen" --add-data "icon.ico;." src/main.py
 
       - name: Baixar e Extrair FFmpeg (Windows)
         run: |
@@ -68,15 +68,15 @@ jobs:
 
       - name: Compilar com PyInstaller
         run: |
-          pyinstaller --noconfirm --onedir --windowed --name "GownloaderPy" --icon "icone.ico" --add-data "src/screen/style.qss:src/screen" --add-data "icone.ico:." src/main.py
+          pyinstaller --noconfirm --onedir --windowed --name "GownloaderPy" --icon "icon.ico" --add-data "src/screen/style.qss:src/screen" --add-data "icon.ico:." src/main.py
 
       - name: Montar Estrutura AppDir e Gerar AppImage
         run: |
           mkdir -p GownloaderPy.AppDir/usr/bin
           mkdir -p GownloaderPy.AppDir/usr/share/icons/hicolor/256x256/apps
           cp -r dist/GownloaderPy/* GownloaderPy.AppDir/usr/bin/
-          cp icone.ico GownloaderPy.AppDir/GownloaderPy.png
-          cp icone.ico GownloaderPy.AppDir/usr/share/icons/hicolor/256x256/apps/GownloaderPy.png
+          cp icon.ico GownloaderPy.AppDir/GownloaderPy.png
+          cp icon.ico GownloaderPy.AppDir/usr/share/icons/hicolor/256x256/apps/GownloaderPy.png
 
           # AppRun
           cat << 'EOF' > GownloaderPy.AppDir/AppRun
