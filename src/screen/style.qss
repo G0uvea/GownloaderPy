@@ -1,0 +1,99 @@
+QWidget {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 13px;
+}
+
+QLabel {
+    font-weight: 600;
+    color: #a6adc8;
+}
+
+QLineEdit, QComboBox {
+    background-color: #313244;
+    border: 1px solid #45475a;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #cdd6f4;
+}
+
+QLineEdit:focus, QComboBox:focus {
+    border: 1px solid #89b4fa;
+}
+
+QComboBox::drop-down {
+    border: none;
+    padding-right: 10px;
+}
+
+/* --- ESTILIZAÇÃO DO MENU SUSPENSO --- */
+QComboBox QAbstractItemView {
+    background-color: #45475a;
+    border: 1px solid #585b70;
+    border-radius: 6px;
+    selection-background-color: #585b70;
+    selection-color: #ffffff;
+    outline: none;
+    padding: 4px;
+}
+
+QComboBox QAbstractItemView::item {
+    min-height: 28px;
+    padding-left: 8px;
+    border-radius: 4px;
+    color: #cdd6f4;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #585b70;
+    color: #ffffff;
+}
+
+/* --- BOTÕES --- */
+QPushButton {
+    background-color: #89b4fa;
+    color: #11111b;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #b4befe;
+}
+
+QPushButton:pressed {
+    background-color: #74c7ec;
+}
+
+QPushButton#btn_pasta {
+    background-color: #45475a;
+    color: #cdd6f4;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+QPushButton#btn_pasta:hover {
+    background-color: #585b70;
+}
+
+/* --- BARRA DE PROGRESSO CORRIGIDA --- */
+QProgressBar {
+    background-color: #313244;
+    border-radius: 6px;
+    border: 0px solid transparent;
+    text-align: center;
+    color: #1f2030;
+    font-weight: bold;
+}
+
+QProgressBar::chunk {
+    background-color: #a6e3a1;
+    border-radius: 5px;
+}
+
+/* --- LINHA DIVISÓRIA --- */
+QFrame#divisor {
+    color: #45475a;
+}

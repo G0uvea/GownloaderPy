@@ -1,0 +1,27 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# === Configurações ===
+**/config.json
+
+# === IDEs e Editores ===
+.idea/
+.vscode/
+*.code-workspace
+
+# === Sistema Operacional ===
+.DS_Store
+.AppleDouble
+.LSSharedFileList
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*~
