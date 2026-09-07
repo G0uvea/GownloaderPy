@@ -114,8 +114,10 @@ jobs:
   # 3. RELEASE JOB: Publica os dois binários na aba Releases do GitHub
   # -------------------------------------------------------------------
   create-release:
-    needs: [build-windows, build-linux]
+    needs: [ build-windows, build-linux ]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Baixar Binário do Windows
         uses: actions/download-artifact@v4
