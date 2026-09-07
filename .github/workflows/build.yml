@@ -7,7 +7,7 @@ on:
 
 jobs:
   # -------------------------------------------------------------------
-  # 1. JOB WINDOWS: Cria .exe portátil
+  # 1. JOB WINDOWS: Cria .exe portátil + FFmpeg
   # -------------------------------------------------------------------
   build-windows:
     runs-on: windows-latest
@@ -25,16 +25,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install PyQt6 yt-dlp pyinstaller
 
+      - name: Compilar com PyInstaller
+        run: |
+          pyinstaller --noconfirm --onedir --windowed --name "GownloaderPy" --icon "icone.ico" --add-data "src/screen/style.qss;src/screen" --add-data "icone.ico;." src/main.py
+
       - name: Baixar e Extrair FFmpeg (Windows)
         run: |
           Invoke-WebRequest -Uri "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip" -OutFile "ffmpeg.zip"
           Expand-Archive -Path "ffmpeg.zip" -DestinationPath "ffmpeg_temp"
-          New-Item -ItemType Directory -Path "dist/GownloaderPy" -Force
           Copy-Item "ffmpeg_temp/ffmpeg-master-latest-win64-gpl/bin/ffmpeg.exe" -Destination "dist/GownloaderPy/"
-
-      - name: Compilar com PyInstaller
-        run: |
-          pyinstaller --noconfirm --onedir --windowed --name "GownloaderPy" --icon "icone.ico" --add-data "src/screen/style.qss;src/screen" --add-data "icone.ico;." main.py
 
       - name: Empacotar ZIP para Windows
         run: |
@@ -63,13 +62,13 @@ jobs:
       - name: Instalar Dependências do Sistema e Python
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget binutils fuse libgl1-mesa-glx
+          sudo apt-get install -y wget binutils fuse libgl1 libglx-mesa0
           python -m pip install --upgrade pip
           pip install PyQt6 yt-dlp pyinstaller
 
       - name: Compilar com PyInstaller
         run: |
-          pyinstaller --noconfirm --onedir --windowed --name "GownloaderPy" --icon "icone.ico" --add-data "src/screen/style.qss:src/screen" --add-data "icone.ico:." main.py
+          pyinstaller --noconfirm --onedir --windowed --name "GownloaderPy" --icon "icone.ico" --add-data "src/screen/style.qss:src/screen" --add-data "icone.ico:." src/main.py
 
       - name: Montar Estrutura AppDir e Gerar AppImage
         run: |
