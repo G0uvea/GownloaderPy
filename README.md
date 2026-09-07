@@ -1,6 +1,6 @@
-# Rippera 🎵🎬
+# GownloaderPy 🎵🎬
 
-O **Rippera** é uma aplicação desktop leve, moderna e intuitiva para download e conversão de vídeos e áudios da internet, desenvolvida em Python com PyQt6.
+O **GownloaderPy** é uma aplicação desktop leve, moderna e intuitiva para download e conversão de vídeos e áudios da internet, desenvolvida em Python com PyQt6.
 
 ---
 
@@ -18,7 +18,7 @@ O **Rippera** é uma aplicação desktop leve, moderna e intuitiva para download
 ## 🛠️ Estrutura do Projeto
 
 ```text
-Rippera/
+GownloaderPy/
 ├── README.md   # Documentação do projeto
 └── src/
     ├── main.py     # Ponto de entrada da aplicação

@@ -1,5 +1,4 @@
 import os
-
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QWidget, QVBoxLayout
 from src.screen.layout import MainLayout
@@ -28,7 +27,7 @@ class MainWindow(QWidget):
         self.load_stylesheet(qss_path)
 
     def setup_window(self):
-        self.setWindowTitle("RIPPERA")
+        self.setWindowTitle("GownloaderPy")
         self.setFixedSize(WINDOW_SIZE[0], WINDOW_SIZE[1])
 
         screen_dir = os.path.dirname(os.path.abspath(__file__))
